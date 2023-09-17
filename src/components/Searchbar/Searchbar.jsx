@@ -1,5 +1,7 @@
 import { Component } from "react";
 import css from './Searchbar.module.css';
+import { BiSearchAlt } from 'react-icons/bi';
+
 
 class Searchbar extends Component{
   state = {
@@ -10,7 +12,7 @@ class Searchbar extends Component{
     const {query} = this.state;
     const searchQuery = query.trim();
     if(!searchQuery){
-      return alert('Type your query to start serch images!');
+      return alert(`Type your query to start serch images!`);
     }
     this.props.createSearchQuery(searchQuery);
     // console.log(searchQuery);
@@ -30,7 +32,7 @@ class Searchbar extends Component{
                        autoFocus
                        placeholder="Search images and photos" />
                 <button className={css.searchButton} type="submit">
-                  <span className={css.buttonLabel}>Search</span>
+                    <BiSearchAlt size={20} />
                 </button>
             </form>
           </header>
